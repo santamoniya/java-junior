@@ -8,7 +8,7 @@ public class Logger {
     private static final String STRING_PREFIX = "string: ";
     private static final String ARRAY_PREFIX ="primitives array: ";
     private static int currentSumm = 0;
-    private static String modString = "";
+    private static String currentString = "";
     private static int maxValueCounter = 0;
     private static int minValueCounter = 0;
     private static final byte
@@ -64,12 +64,12 @@ public class Logger {
     public static void log(String message) {
         state = STRING_STATE;
 
-        boolean stringsNotEqual = !message.equals(modString);
+        boolean stringsNotEqual = !message.equals(currentString);
         if (printNeeded() || stringsNotEqual) {
             checkPrint();
         }
         currentSumm++;
-        modString = message;
+        currentString = message;
         previous_state = state;
     }
 
@@ -114,7 +114,7 @@ public class Logger {
     }
 
     private static void printString() {
-        System.out.print(STRING_PREFIX + modString);
+        System.out.print(STRING_PREFIX + currentString);
         if (currentSumm > 1) {
             System.out.print(" (x" + currentSumm + ")");
         }
