@@ -9,6 +9,8 @@ import org.junit.Test;
 import java.io.IOException;
 
 public class LoggerTest implements SysoutCaptureAndAssertionAbility {
+    private static final String LINE_SEPARATOR = "\n";
+
     //region given
     @Before
     public void setUpSystemOut() throws IOException {
@@ -22,23 +24,24 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     }
     //endregion
 
-    /*
-    TODO: implement Logger solution to match specification as tests
+
+    //TODO: implement Logger solution to match specification as tests
 
     @Test
     public void shouldLogIntegersArray() throws IOException {
         //region when
         Logger.log(new int[] {-1, 0, 1});
+        Logger.close();
         //endregion
 
         //region then
         assertSysoutEquals(
-            "primitives array: {-1, 0, 1}\n"
+                "primitives array: {-1, 0, 1}" + LINE_SEPARATOR
         );
         //endregion
     }
 
-    @Test
+    /*@Test
     public void shouldLogIntegersMatrix() throws IOException {
         //region when
         Logger.log(new int[][] {{-1, 0, 1}, {1, 2, 3}, {-1, -2, -3}});
