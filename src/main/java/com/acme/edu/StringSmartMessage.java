@@ -19,7 +19,6 @@ public class StringSmartMessage implements SmartMessage {
         return output;
     }
 
-
     @Override
     public String consumeMessage(SmartMessage previousMessage) {
         if (previousMessage == null) return null;

@@ -3,8 +3,8 @@ package com.acme.edu;
 public class PrimitiveByteSmartMessage extends PrimitiveSmartMessage {
     public PrimitiveByteSmartMessage(byte message) {
         super(message);
-        maxBorder = Byte.MAX_VALUE;
-        minBorder = Byte.MIN_VALUE;
+        this.maxBorder = Byte.MAX_VALUE;
+        this.minBorder = Byte.MIN_VALUE;
     }
 
     @Override

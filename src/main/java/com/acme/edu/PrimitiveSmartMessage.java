@@ -9,8 +9,8 @@ public abstract class PrimitiveSmartMessage implements SmartMessage {
     protected int minBorder;
 
     protected PrimitiveSmartMessage(int inputMessage) {
-        message = inputMessage;
-        sum = inputMessage;
+        this.message = inputMessage;
+        this.sum = inputMessage;
     }
 
     @Override

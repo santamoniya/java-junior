@@ -5,7 +5,7 @@ public class ArraySmartMessage implements SmartMessage {
     private final String format = "primitives array: ";
 
     public ArraySmartMessage(int... inputMessage) {
-        message = inputMessage;
+        this.message = inputMessage;
     }
 
     @Override

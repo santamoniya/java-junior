@@ -6,7 +6,7 @@ public class CharSmartMessage implements SmartMessage {
     private char message;
 
     public CharSmartMessage(char inputMessage) {
-        message = inputMessage;
+        this.message = inputMessage;
     }
 
     @Override

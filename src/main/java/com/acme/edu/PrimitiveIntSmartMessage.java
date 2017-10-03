@@ -4,8 +4,8 @@ public class PrimitiveIntSmartMessage extends PrimitiveSmartMessage {
 
     public PrimitiveIntSmartMessage(int message) {
         super(message);
-        maxBorder = Integer.MAX_VALUE;
-        minBorder = Integer.MIN_VALUE;
+        this.maxBorder = Integer.MAX_VALUE;
+        this.minBorder = Integer.MIN_VALUE;
     }
 
     @Override
