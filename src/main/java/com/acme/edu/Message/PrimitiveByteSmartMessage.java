@@ -1,4 +1,6 @@
-package com.acme.edu;
+package com.acme.edu.Message;
+
+import com.acme.edu.Exceptions.NumberOverflowException;
 
 public class PrimitiveByteSmartMessage extends PrimitiveSmartMessage {
     public PrimitiveByteSmartMessage(byte message) {
@@ -8,13 +10,16 @@ public class PrimitiveByteSmartMessage extends PrimitiveSmartMessage {
     }
 
     @Override
-    public String consumeMessage(SmartMessage previousMessage) {
+    public String consumeMessage(SmartMessage previousMessage) throws NumberOverflowException {
         if (previousMessage == null) return null;
 
         if (!(previousMessage instanceof PrimitiveByteSmartMessage)) {
             return previousMessage.makeFormatString();
         }
         long previousSum = ((PrimitiveByteSmartMessage) previousMessage).sum;
+        if (checkNumberOverflow(previousSum) ) {
+            throw new NumberOverflowException("Long overflow");
+        }
         sum += previousSum;
         return null;
     }

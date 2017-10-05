@@ -1,4 +1,4 @@
-package com.acme.edu;
+package com.acme.edu.Message;
 
 public class StringSmartMessage implements SmartMessage {
     private int sameStringsCounter;

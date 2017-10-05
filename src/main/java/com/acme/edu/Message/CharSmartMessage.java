@@ -1,4 +1,4 @@
-package com.acme.edu;
+package com.acme.edu.Message;
 
 public class CharSmartMessage implements SmartMessage {
 
@@ -12,10 +12,7 @@ public class CharSmartMessage implements SmartMessage {
     @Override
     public String consumeMessage(SmartMessage previousMessage) {
         if (previousMessage == null) return null;
-        if (!(previousMessage instanceof CharSmartMessage )) {
-            return previousMessage.makeFormatString();
-        }
-        return null;
+        return previousMessage.makeFormatString();
     }
 
     @Override

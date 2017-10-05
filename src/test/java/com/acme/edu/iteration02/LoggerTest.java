@@ -52,8 +52,8 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogCorrectlyIntegerOverflowWhenSequentIntegers() {
         //region when
         Logger.log("str 1");
-        Logger.log(10);
-        Logger.log(Integer.MAX_VALUE);
+        Logger.log(-10);
+        Logger.log(Integer.MIN_VALUE);
         Logger.log("str 2");
         Logger.log(0);
         Logger.close();
@@ -62,8 +62,8 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //region then
         assertSysoutEquals(
             "string: str 1" + LINE_SEPARATOR +
-                    "primitive: 10" + LINE_SEPARATOR +
-            Integer.MAX_VALUE + LINE_SEPARATOR +
+                    "primitive: -10" + LINE_SEPARATOR +
+            Integer.MIN_VALUE + LINE_SEPARATOR +
                     "string: str 2" + LINE_SEPARATOR +
                     "primitive: 0" + LINE_SEPARATOR
         );

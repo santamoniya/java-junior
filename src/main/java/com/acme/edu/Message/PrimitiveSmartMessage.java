@@ -1,4 +1,6 @@
-package com.acme.edu;
+package com.acme.edu.Message;
+
+import com.acme.edu.Exceptions.NumberOverflowException;
 
 public abstract class PrimitiveSmartMessage implements SmartMessage {
 
@@ -14,7 +16,17 @@ public abstract class PrimitiveSmartMessage implements SmartMessage {
     }
 
     @Override
-    public abstract String consumeMessage(SmartMessage previousMessage);
+    public abstract String consumeMessage(SmartMessage previousMessage) throws NumberOverflowException;
+
+    boolean checkNumberOverflow(long previousSum) {
+        if (sum > 0 && Long.MAX_VALUE - sum < previousSum) {
+            return true;
+        }
+        if (sum < 0 && Long.MIN_VALUE - sum > previousSum) {
+            return true;
+        }
+        return false;
+    }
 
     @Override
     public String makeFormatString() {

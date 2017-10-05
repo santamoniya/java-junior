@@ -1,4 +1,4 @@
-package com.acme.edu;
+package com.acme.edu.Message;
 
 public class ArraySmartMessage implements SmartMessage {
     private int[] message;
@@ -11,10 +11,7 @@ public class ArraySmartMessage implements SmartMessage {
     @Override
     public String consumeMessage(SmartMessage previousMessage) {
         if (previousMessage == null) return null;
-        if (!(previousMessage instanceof ArraySmartMessage )) {
-            return previousMessage.makeFormatString();
-        }
-        return null;
+        return previousMessage.makeFormatString();
     }
 
     @Override
