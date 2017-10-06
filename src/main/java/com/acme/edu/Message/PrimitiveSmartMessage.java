@@ -19,10 +19,10 @@ public abstract class PrimitiveSmartMessage implements SmartMessage {
     public abstract String consumeMessage(SmartMessage previousMessage) throws NumberOverflowException;
 
     boolean checkNumberOverflow(long previousSum) {
-        if (sum > 0 && Long.MAX_VALUE - sum < previousSum) {
+        if (sum > 0 && Integer.MAX_VALUE - sum < previousSum) {
             return true;
         }
-        if (sum < 0 && Long.MIN_VALUE - sum > previousSum) {
+        if (sum < 0 && Integer.MIN_VALUE - sum > previousSum) {
             return true;
         }
         return false;

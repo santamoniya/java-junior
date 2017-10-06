@@ -18,6 +18,7 @@ public class PrimitiveByteSmartMessage extends PrimitiveSmartMessage {
         }
         long previousSum = ((PrimitiveByteSmartMessage) previousMessage).sum;
         if (checkNumberOverflow(previousSum) ) {
+            sum = 0;
             throw new NumberOverflowException("Long overflow");
         }
         sum += previousSum;
